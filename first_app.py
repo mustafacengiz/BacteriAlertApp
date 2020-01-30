@@ -4,7 +4,7 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 
-st.title('Welcome to SwiML app')
+st.title('Welcome to BacteriAlert')
 beaches = ['8TH STREET CANAL', 'BEACH DRIVE', 'BECKRICH RD',
        'BID-A-WEE BEACH', 'CARL GRAY PARK', 'DELWOOD', 'DUPONT BRIDGE',
        'EAST COUNTY LINE', 'LAGUNA BEACH', 'PCB CITY PIER',
@@ -161,7 +161,7 @@ useri = st.selectbox('Please select a beach', beaches)
 
 st.write('You selected: ', useri)
 
-st.write('Our prediction for pollution on this beach is as follows:')
+st.write('Our pollution predictions for this beach for next 3 days are:')
 
 #st.image('calendar.png')
 
