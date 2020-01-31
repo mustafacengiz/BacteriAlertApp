@@ -161,7 +161,7 @@ useri = st.selectbox('Please select a beach', beaches)
 
 st.write('You selected: ', useri)
 
-st.write('Our pollution predictions for this beach for next 3 days are:')
+st.write('Our pollution predictions for this beach for next 10 days are:')
 
 #st.image('calendar.png')
 
