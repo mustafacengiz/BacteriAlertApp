@@ -163,6 +163,3 @@ beach = st.selectbox('Please select a beach', beaches)
 
 st.write('You selected: ', beach)
 
-model = pickle.load(open('prediction_model', 'rb'))
-df = pd.read_csv('Locations')
-#abc
