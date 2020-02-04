@@ -163,3 +163,6 @@ beach = st.selectbox('Please select a beach', beaches)
 
 st.write('You selected: ', beach)
 
+st.write('You selected: ', beach)
+
+
