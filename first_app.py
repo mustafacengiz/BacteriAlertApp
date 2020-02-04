@@ -3,6 +3,7 @@ import streamlit as st
 # working with sample data.
 import numpy as np
 import pandas as pd
+import pickle
 
 st.title('Welcome to BacteriAlert')
 beaches = ['8TH STREET CANAL', 'BEACH DRIVE', 'BECKRICH RD',
@@ -156,15 +157,23 @@ beaches = ['8TH STREET CANAL', 'BEACH DRIVE', 'BECKRICH RD',
        'Opal Beach', 'Quietwater Beach', 'SOUTH BEACH PARK 31',
        'Miramar - COUNTY PARK BEACH', 'Clearwater Beach - Mandalay Park']
 
-useri = st.selectbox('Please select a beach', beaches)
+beach = st.selectbox('Please select a beach', beaches)
 
 
-st.write('You selected: ', useri)
+st.write('You selected: ', beach)
 
-st.write('Our pollution predictions for this beach for next 10 days are:')
 
+model = pickle.load(open('prediction_model', 'rb'))
+df = pd.read_csv('Dummies')
+
+s = df.loc[df[df['SPLocation'] == beach].index[0]]
+s[2] = pd.datetime.now().month
+s[3] = (pd.datetime.now().month -1) * 30 + pd.datetime.now().day
+st.write('Our prediction for today is: ')st.text(model.predict(s.values.reshape(1, -1)[0])
+
+
+s = df.loc[df[df['SPLocation'] == beach].index[0]]
+s[2] = pd.datetime.now().month
+s[3] = (pd.datetime.now().month -1) * 30 + pd.datetime.now().day + 1
+st.write('Our prediction for tomorrow is: ')st.text(model.predict(s.values.reshape(1, -1)[0])
 #st.image('calendar.png')
-
-
-
-
