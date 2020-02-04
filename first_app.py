@@ -165,6 +165,7 @@ st.write('You selected: ', beach)
 
 model = pickle.load(open('prediction_model', 'rb'))
 df = pd.read_csv('Dummies')
+#abc
 
 s = df.loc[df[df['SPLocation'] == beach].index[0]]
 s[2] = pd.datetime.now().month
