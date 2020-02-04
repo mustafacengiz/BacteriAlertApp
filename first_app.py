@@ -173,3 +173,8 @@ s[3] = (pd.datetime.now().month -1) * 30 + pd.datetime.now().day
 st.write('Our prediction for today is: ')
 st.text(model.predict(s[1:].values.reshape(1, -1)))
 #
+t = df[df['SPLocation'] == beach].T.squeeze()
+t[2] = pd.datetime.now().month
+t[3] = (pd.datetime.now().month -1) * 30 + pd.datetime.now().day
+st.write('Our prediction for tomorrow is: ')
+st.text(model.predict(t[1:].values.reshape(1, -1)))
