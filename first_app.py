@@ -4,6 +4,10 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import pickle
+import sklearn
+from sklearn.linear_model import LogisticRegression
+
+
 
 st.title('Welcome to BacteriAlert')
 beaches = ['8TH STREET CANAL', 'BEACH DRIVE', 'BECKRICH RD',
