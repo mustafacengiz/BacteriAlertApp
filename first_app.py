@@ -167,8 +167,7 @@ model = pickle.load(open('prediction_model', 'rb'))
 df = pd.read_csv('Dummies')
 #abc
 
-i = df[df['SPLocation'] == beach].index[0]
-s = df.loc[i]
+s = df[df['SPLocation'] == beach].T.squeeze()
 s[2] = pd.datetime.now().month
 s[3] = (pd.datetime.now().month -1) * 30 + pd.datetime.now().day
 st.write('Our prediction for today is: ')
