@@ -7,7 +7,6 @@ import pickle
 import sklearn
 from sklearn.linear_model import LogisticRegression
 
-
 st.title('Welcome to BacteriAlert')
 beaches = ['8TH STREET CANAL', 'BEACH DRIVE', 'BECKRICH RD',
        'BID-A-WEE BEACH', 'CARL GRAY PARK', 'DELWOOD', 'DUPONT BRIDGE',
