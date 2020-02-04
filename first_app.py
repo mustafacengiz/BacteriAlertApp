@@ -170,4 +170,4 @@ s = df.loc[df[df['SPLocation'] == beach].index[0]]
 s[2] = pd.datetime.now().month
 s[3] = (pd.datetime.now().month -1) * 30 + pd.datetime.now().day
 st.write('Our prediction for today is: ')
-st.text(model.predict(s.values.reshape(1, -1)[0])
+st.text(model.predict(s.values.reshape(1, -1)[0][1:]))
