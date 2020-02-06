@@ -246,7 +246,7 @@ county = st.selectbox('Please select a county:', counties)
 
 beaches = lists[counties.index(county)]
 
-beach = st.write('Now please select a location: ', beaches)
+beach = st.selectbox('Now please select a location: ', beaches)
 
 model = pickle.load(open('prediction_model', 'rb'))
 df = pd.read_csv('Locations')
