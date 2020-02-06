@@ -263,10 +263,10 @@ for n in range(7):
  s[2] = pd.datetime.now().month
  s[3] = (pd.datetime.now().month -1) * 30 + pd.datetime.now().day + n
  if model.predict(s[1:].values.reshape(1, -1)) == [1]:
-  tarih = datetime.date.today() + datetime.timedelta(days = n)
-  st.write('We do not expect pollution at this location on', tarih'.')
+  #tarih = datetime.date.today() + datetime.timedelta(days = n)
+  st.write('We do not expect pollution at this location on .')
  else:
-  st.write('We expect this location to be polluted on', tarih'.')
+  st.write('We expect this location to be polluted on .')
 #
 #t = df[df['SPLocation'] == beach].T.squeeze()
 #t[2] = pd.datetime.now().month
