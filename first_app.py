@@ -242,11 +242,11 @@ lists = [['BEACH DRIVE','BECKRICH RD','BID-A-WEE BEACH','CARL GRAY PARK','DELWOO
   'INLET BEACH ACCESS',
   'WHEELER POINT']]
 
-county = st.selectbox('Please select a county', counties)
+county = st.selectbox('Please select a county:', counties)
 
 beaches = lists[counties.index(county)]
 
-st.write('Now please select a location: ', beaches)
+beach = st.write('Now please select a location: ', beaches)
 
 model = pickle.load(open('prediction_model', 'rb'))
 df = pd.read_csv('Locations')
