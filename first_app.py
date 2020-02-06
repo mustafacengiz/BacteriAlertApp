@@ -261,7 +261,7 @@ st.write("Here are our predictions, based on Florida health department's histori
 for n in range(7):
  s = df[df['SPLocation'] == beach].T.squeeze()
  s[2] = pd.datetime.now().month
- s[3] = (pd.datetime.now().month -1) * 30 + pd.datetime.now().day + n
+ s[3] = (pd.datetime.now().month -1) * 30 + pd.datetime.now().day + 10 * n
  if model.predict(s[1:].values.reshape(1, -1)) == [1]:
   #tarih = datetime.date.today() + datetime.timedelta(days = n)
   st.write('We do not expect pollution at this location on .')
