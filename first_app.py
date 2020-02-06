@@ -257,18 +257,18 @@ s[2] = pd.datetime.now().month
 s[3] = (pd.datetime.now().month -1) * 30 + pd.datetime.now().day
 
 if model.predict(s[1:].values.reshape(1, -1)) == [1]:
- st.write('We do not expect pollution at this location today)
+ st.write('We do not expect pollution at this location today')
 else:
- st.write('We expect this location to be polluted today)
+ st.write('We expect this location to be polluted today')
 #
 t = df[df['SPLocation'] == beach].T.squeeze()
 t[2] = pd.datetime.now().month
 t[3] = (pd.datetime.now().month -1) * 30 + pd.datetime.now().day
 
 if model.predict(t[1:].values.reshape(1, -1)) == [1]:
- st.write('We do not expect pollution at this location tomorrow)
+ st.write('We do not expect pollution at this location tomorrow')
 else:
- st.write('We expect this location to be polluted tomorrow)
+ st.write('We expect this location to be polluted tomorrow')
 #st.write('Our prediction for tomorrow is: ')
 #st.text(model.predict(t[1:].values.reshape(1, -1)))
 
