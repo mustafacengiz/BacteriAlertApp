@@ -8,7 +8,7 @@ import sklearn
 from sklearn.linear_model import LogisticRegression
 
 st.title('Welcome to BacteriAlert')
-st.write("This app provides bacterial beach water pollution predictions for 137 beaches in 26 costal Florida counties within seven days.")
+st.write("This app provides bacterial beach water pollution predictions for 137 beaches in 26 costal Florida counties within seven days. Our predictions are based on Florida Health Department's beach water test data during 2000-2017.")
 #st.write( "Our predictions are based on Florida Health Department's historical beach water test data.")
 
 
@@ -225,7 +225,7 @@ model = pickle.load(open('prediction_model', 'rb'))
 df = pd.read_csv('Locations')
 
 if beach != ' ':
- st.write("The county coordinates are " + str(coordinate[0])+ " and "+ str(coordinate[1]) )
+ st.write("The coordinates for this location are " + str(coordinate[0])+ " and "+ str(coordinate[1]) )
 
 #abc
 
