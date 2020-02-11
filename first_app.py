@@ -201,7 +201,7 @@ beach = st.selectbox('Now please select a location: ', beaches)
 
 coordinate = coordinates[counties.index(county)]
 
-st.write("The county coordinates are" + str(coordinate[0])+ " and "+ str(coordinate[1]) )
+st.write("The county coordinates are " + str(coordinate[0])+ " and "+ str(coordinate[1]) )
 
 
 model = pickle.load(open('prediction_model', 'rb'))
