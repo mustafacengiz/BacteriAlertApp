@@ -9,11 +9,10 @@ from sklearn.linear_model import LogisticRegression
 
 st.title('Welcome to BacteriAlert')
 st.write("This app provides bacterial beach water pollution predictions for 137 beaches in 26 costal Florida counties within seven days.")
-#st.write("Our predictions are based on Florida Health Department's historical beach water test data.")
+#st.write( "Our predictions are based on Florida Health Department's historical beach water test data.")
 
 
-counties = ['Bay',
- 'Brevard',
+counties = ['Bay','Brevard',
  'Broward',
  'Charlotte',
  'Dade',
