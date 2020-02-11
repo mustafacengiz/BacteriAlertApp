@@ -259,4 +259,4 @@ if beach != ' ':
 #st.write('Our prediction for tomorrow is: ')
  #st.text(model.predict(t[1:].values.reshape(1, -1)))
 
-
+st.write('Note: The pollution level is determined by bacteria level. "Polluted" means that the enterococcus level is expected to be greater than 70 colony per 100 ml at the given location on the given date.')
