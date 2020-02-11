@@ -12,7 +12,7 @@ st.write("This app provides bacterial beach water pollution predictions for 137 
 #st.write( "Our predictions are based on Florida Health Department's historical beach water test data.")
 
 
-counties = ['Bay','Brevard',
+counties = [' ', 'Bay','Brevard',
  'Broward',
  'Charlotte',
  'Dade',
@@ -37,7 +37,7 @@ counties = ['Bay','Brevard',
  'Volusia',
  'Wakulla',
  'Walton']
-lists = [['BEACH DRIVE',
+lists = [' ', ['BEACH DRIVE',
   'BECKRICH RD',
   'BID-A-WEE BEACH',
   'CARL GRAY PARK',
@@ -195,27 +195,28 @@ coordinates = [[27.7567667, -81.4639835],
 
 county = st.selectbox('Please select a county:', counties)
 
-beaches = lists[counties.index(county)]
+beaches = [' '] + lists[counties.index(county)]
 
 beach = st.selectbox('Now please select a location: ', beaches)
 
 coordinate = coordinates[counties.index(county)]
 
-st.write("The county coordinates are " + str(coordinate[0])+ " and "+ str(coordinate[1]) )
+if beach != ' ':
+ st.write("The county coordinates are " + str(coordinate[0])+ " and "+ str(coordinate[1]) )
 
 
-model = pickle.load(open('prediction_model', 'rb'))
-df = pd.read_csv('Locations')
+ model = pickle.load(open('prediction_model', 'rb'))
+ df = pd.read_csv('Locations')
 #abc
 
 
-st.write("Here are our predictions for the chosen location, based on Florida Health Department's historical beach water test data:")
+ st.write("Here are our predictions for the chosen location, based on Florida Health Department's historical beach water test data:")
 #import datetime as dt
-for x in range(7):
+ for x in range(7):
  #t = pd.dt.today() + DT.timedelta(days=x)
  #s = str(t.strftime('%m/%d/%Y'))
  #st.write(s +": Clean")
- st.write("Clean")
+  st.write("Clean")
 
 
 #for n in range(7):
