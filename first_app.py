@@ -182,7 +182,7 @@ import datetime as dt
 for x in range(7):
  t = pd.dt.today() + DT.timedelta(days=x)
  s = str(t.strftime('%m/%d/%Y'))
- st.write(s +": Clean)
+ st.write(s +": Clean")
 
 
 #for n in range(7):
