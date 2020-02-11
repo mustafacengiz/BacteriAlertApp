@@ -177,28 +177,28 @@ df = pd.read_csv('Locations')
 #abc
 
 
-st.write("Here are our predictions based on Florida Health Department's historical beach water test data:")
+st.write("Here are our predictions for the chosen location, based on Florida Health Department's historical beach water test data:")
 
-
+st.write("pd.datetime.today().strftime('%m/%d/%Y'): Clean)
 
 
 #for n in range(7):
-s = df[df['SPLocation'] == beach].T.squeeze()
-s[2] = pd.datetime.now().month
-s[3] = (pd.datetime.now().month -1) * 30 + pd.datetime.now().day
-if model.predict(s[1:].values.reshape(1, -1)) == [0]:
+#s = df[df['SPLocation'] == beach].T.squeeze()
+#s[2] = pd.datetime.now().month
+#s[3] = (pd.datetime.now().month -1) * 30 + pd.datetime.now().day
+#if model.predict(s[1:].values.reshape(1, -1)) == [0]:
   #tarih = datetime.date.today() + datetime.timedelta(days = n)
-  st.write('We do not expect pollution at this location today.')
-else:
-  st.write('We expect this location to be polluted today.')
+  #st.write('We do not expect pollution at this location today.')
+#else:
+ # st.write('We expect this location to be polluted today.')
 #
-t = df[df['SPLocation'] == beach].T.squeeze()
-t[2] = pd.datetime.now().month
-t[3] = (pd.datetime.now().month -1) * 30 + pd.datetime.now().day+180
-if model.predict(t[1:].values.reshape(1, -1)) == [0]:
- st.write('We do not expect pollution at this location tomorrow.')
-else:
- st.write('We expect this location to be polluted tomorrow.')
+#t = df[df['SPLocation'] == beach].T.squeeze()
+#t[2] = pd.datetime.now().month
+#t[3] = (pd.datetime.now().month -1) * 30 + pd.datetime.now().day+180
+#if model.predict(t[1:].values.reshape(1, -1)) == [0]:
+ #st.write('We do not expect pollution at this location tomorrow.')
+#else:
+ #st.write('We expect this location to be polluted tomorrow.')
 #st.write('Our prediction for tomorrow is: ')
  #st.text(model.predict(t[1:].values.reshape(1, -1)))
 
