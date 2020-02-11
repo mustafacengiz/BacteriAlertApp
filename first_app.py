@@ -178,11 +178,12 @@ df = pd.read_csv('Locations')
 
 
 st.write("Here are our predictions for the chosen location, based on Florida Health Department's historical beach water test data:")
-import datetime as dt
+#import datetime as dt
 for x in range(7):
- t = pd.dt.today() + DT.timedelta(days=x)
- s = str(t.strftime('%m/%d/%Y'))
- st.write(s +": Clean")
+ #t = pd.dt.today() + DT.timedelta(days=x)
+ #s = str(t.strftime('%m/%d/%Y'))
+ #st.write(s +": Clean")
+ st.write("Clean")
 
 
 #for n in range(7):
