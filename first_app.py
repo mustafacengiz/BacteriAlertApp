@@ -166,11 +166,43 @@ lists = [['BEACH DRIVE',
   'HOLLEY STREET BEACH',
   'INLET BEACH ACCESS']]
 
+coordinates = [[27.7567667, -81.4639835],
+ [28.2446658, -80.728624],
+ [26.1598074, -80.4623642],
+ [26.9013269, -81.9156799],
+ [25.6364246, -80.4989467],
+ [30.6625885, -87.3451089],
+ [29.8323143, -84.8239118],
+ [29.9665252, -85.2175889],
+ [28.5710156, -82.4605068],
+ [27.9184543, -82.3488057],
+ [27.7041555, -80.5894422],
+ [26.5999265, -81.8823135],
+ [27.5213933, -82.3801566],
+ [27.7567667, -81.4639835],
+ [25.0405135, -80.8337157],
+ [30.6765961, -86.6037748],
+ [26.6279798, -80.4494174],
+ [28.2996183, -82.4522702],
+ [27.8778904, -82.7329309],
+ [30.6964502, -87.0097524],
+ [27.3364347, -82.5306527],
+ [29.9032284, -81.4145468],
+ [27.3900897, -80.457904],
+ [29.0533409, -81.1310761],
+ [30.1480038, -84.3543512],
+ [30.6204939, -86.1912678]]
+
 county = st.selectbox('Please select a county:', counties)
 
 beaches = lists[counties.index(county)]
 
 beach = st.selectbox('Now please select a location: ', beaches)
+
+coordinate = coordinates[counties.index(county)]
+
+st.write("The county coordinates are" + str(coordinate[0])+ " and "+ str(coordinate[1]) )
+
 
 model = pickle.load(open('prediction_model', 'rb'))
 df = pd.read_csv('Locations')
