@@ -8,8 +8,8 @@ import sklearn
 from sklearn.linear_model import LogisticRegression
 
 st.title('Welcome to BacteriAlert')
-st.write("This app provides bacterial beach water pollution predictions for 137 beaches in 26 costal Florida beaches within seven days.")
-st.write("Our predictions are based on Florida Health Department's historical beach water test data.")
+st.write("This app provides bacterial beach water pollution predictions for 137 beaches in 26 costal Florida counties within seven days.")
+#st.write("Our predictions are based on Florida Health Department's historical beach water test data.")
 
 
 counties = ['Bay',
@@ -178,7 +178,7 @@ df = pd.read_csv('Locations')
 #abc
 
 
-st.write("Here are our predictions, based on Florida Health Department's historical beach water test data:")
+st.write("Here are our predictions based on Florida Health Department's historical beach water test data:")
 
 
 
