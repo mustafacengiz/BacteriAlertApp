@@ -272,7 +272,7 @@ if beach != ' ':
 
  st.write('NOTE: The pollution level is determined by bacteria level. "Polluted" means that the enterococcus level is expected to be greater than 70 colony per 100 ml at the given location on the given date.')
 
-st.write("<style>red{color:red} orange{color:orange}....</style>)
+#st.write("<style>red{color:red} orange{color:orange}....</style>)
 colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
 for color in colors:
 st.write(f"<{color}>{color}</{color}>", unsafe_allow_html=True)
