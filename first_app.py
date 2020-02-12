@@ -4,6 +4,7 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import pickle
+import datetime as dt
 import sklearn
 from sklearn.linear_model import LogisticRegression
 class color:
@@ -244,10 +245,14 @@ if beach != ' ':
  
 #import datetime as dt
  for x in range(7):
+   t = pd.datetime.today() + dt.timedelta(days=x)
+   s = str(t.strftime('%m/%d/%Y'))
+   st.write("s: Clean")
+      
  #t = pd.dt.today() + DT.timedelta(days=x)
  #s = str(t.strftime('%m/%d/%Y'))
  #st.write(s +": Clean")
-  st.write("Clean")
+  
 
 
 #for n in range(7):
