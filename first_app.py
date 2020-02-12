@@ -20,7 +20,7 @@ class color:
    END = '\033[0m'
    
 st.title('Welcome to BacteriAlert')
-st.write("This app provides bacterial beach water pollution predictions for 137 beaches in 26 costal Florida counties within seven days. Our predictions are based on Florida Health Department's beach water test data during 2000-2017.")
+st.write("This app provides bacterial beach water pollution predictions for 137 beaches in 26 coastal Florida counties within seven days. Our predictions are based on Florida Health Department's beach water test data during 2000-2017.")
 #st.write( "Our predictions are based on Florida Health Department's historical beach water test data.")
 
 
