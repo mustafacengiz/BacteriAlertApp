@@ -237,7 +237,7 @@ model = pickle.load(open('prediction_model', 'rb'))
 df = pd.read_csv('Locations')
 
 if beach != ' ':
- st.write("The coordinates for this location are " + str(coordinate[0])+ " and "+ str(coordinate[1])+".")
+ #st.write("The coordinates for this location are " + str(coordinate[0])+ " and "+ str(coordinate[1])+".")
 
 #abc
 
