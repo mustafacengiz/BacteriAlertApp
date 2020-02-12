@@ -225,12 +225,12 @@ model = pickle.load(open('prediction_model', 'rb'))
 df = pd.read_csv('Locations')
 
 if beach != ' ':
- st.write("The coordinates for this location are " + str(coordinate[0])+ " and "+ str(coordinate[1]) )
+ st.write("The coordinates for this location are " + str(coordinate[0])+ " and "+ str(coordinate[1])+".")
 
 #abc
 
 
- st.write("Here are our predictions for the chosen location, based on Florida Health Department's historical beach water test data:")
+ st.write("Here are our predictions for "+beach+" for next seven days.")
 #import datetime as dt
  for x in range(7):
  #t = pd.dt.today() + DT.timedelta(days=x)
