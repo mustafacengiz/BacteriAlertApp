@@ -247,8 +247,8 @@ if beach != ' ':
  for x in range(7):
    t = pd.datetime.today() + dt.timedelta(days=x)
    s = str(t.strftime('%m/%d/%Y'))
-   #st.write(s + ": st.markdown("<span style='color:blue'>some *blue* text</span>", unsafe_allow_html=True)")
-   st.markdown(s + ": <span style='color:blue'>some *blue* text</span>", unsafe_allow_html=True)") 
+   st.write(s + ": Clean")
+   st.markdown("a: <span style='color:blue'>Clean</span>", unsafe_allow_html=True)") 
  #t = pd.dt.today() + DT.timedelta(days=x)
  #s = str(t.strftime('%m/%d/%Y'))
  #st.write(s +": Clean")
