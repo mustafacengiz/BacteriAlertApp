@@ -240,9 +240,6 @@ if beach != ' ':
 
 #abc
 
-
-print(color.BOLD + 'Hello World !' + color.END)
-
  st.write("Here are our predictions for "+beach+" for next seven days.")
  
 #import datetime as dt
