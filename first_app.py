@@ -247,7 +247,7 @@ if beach != ' ':
  for x in range(7):
    t = pd.datetime.today() + dt.timedelta(days=x)
    s = str(t.strftime('%m/%d/%Y'))
-   st.write("s: Clean")
+   st.write(s + ": Clean")
       
  #t = pd.dt.today() + DT.timedelta(days=x)
  #s = str(t.strftime('%m/%d/%Y'))
