@@ -241,16 +241,15 @@ if beach != ' ':
 
 #abc
 
- st.write("Here are our predictions for "+beach+" for next seven days.")
-
+ st.write("Here are our predictions for "+beach+" for next seven days:")
  st.write("------------------------------------------------------------")
 
 #import datetime as dt
  for x in range(7):
    t = pd.datetime.today() + dt.timedelta(days=x)
    s = str(t.strftime('%m/%d/%Y'))
-   st.write(s + ": Clean")
-   st.markdown(s + ": I just love <strong>bold text</strong>", unsafe_allow_html=True)
+   #st.write(s + ": Clean")
+   st.markdown(s + ": <strong>Clean</strong>", unsafe_allow_html=True)
  #t = pd.dt.today() + DT.timedelta(days=x)
  #s = str(t.strftime('%m/%d/%Y'))
  #st.write(s +": Clean")
