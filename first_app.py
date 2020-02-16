@@ -6,7 +6,9 @@ import pandas as pd
 import pickle
 import datetime as dt
 import sklearn
-from sklearn.linear_model import LogisticRegression
+import plotly.graph_objects as go
+
+
 class color:
    PURPLE = '\033[95m'
    CYAN = '\033[96m'
@@ -440,11 +442,11 @@ numbers = [44, 45, 46, 47, 48, 49,
  131,
  133, 134, 279, 251, 264, 266, 268, 269, 270, 271, 71, 72, 35, 37, 38, 39, 40, 112, 113, 185, 30, 31, 135, 136, 137, 274, 42, 224, 225, 227]
 
-county = st.sidebar.selectbox('Please select a county:', counties)
+county = st.selectbox('Please select a county:', counties)
 
 countybeaches = lists[counties.index(county)]
 
-beach = st.sidebar.selectbox('Now please select a location: ', countybeaches)
+beach = st.selectbox('Now please select a location: ', countybeaches)
 
 model = pickle.load(open('final_model_.pkl', 'rb'))
 
