@@ -452,6 +452,8 @@ model = pickle.load(open('final_model_.pkl', 'rb'))
 
 df = pd.read_csv('feed.csv')
 df['Date'] = pd.to_datetime(df['Date']) 
+df.info()
+df.head()
 
 if beach != ' ':
  #st.write("The coordinates for this location are " + str(coordinate[0])+ " and "+ str(coordinate[1])+".")
