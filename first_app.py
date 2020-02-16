@@ -468,7 +468,8 @@ if beach != ' ':
    s[1] = numbers[beaches.index(beach)]
    if model.predict(s[1:].values.reshape(1, -1)) == [0]:
       st.markdown(d + ": <strong>Clean</strong>", unsafe_allow_html=True)
-   if model.predict(s[1:].values.reshape(1, -1)) == [1]:
+      print(s)
+   else:
       st.markdown(d + ": <strong>Polluted</strong>", unsafe_allow_html=True)
  #for x in range(7): 
    #t = pd.datetime.today() + dt.timedelta(days=x)
