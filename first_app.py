@@ -446,7 +446,7 @@ countybeaches = lists[counties.index(county)]
 
 beach = st.selectbox('Now please select a location: ', countybeaches)
 
-beach_no = numbers[beaches.index(allbeaches)]
+beach_no = numbers[allbeaches.index(beach)]
 
 model = pickle.load(open('final_model_.pkl', 'rb'))
 
