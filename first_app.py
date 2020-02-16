@@ -450,7 +450,7 @@ beach_no = numbers[beaches.index(beach)]
 
 model = pickle.load(open('final_model_.pkl', 'rb'))
 
-df = pd.read_csv('feed.csv', parse_dates=['Date'])
+df = pd.read_csv('feed.csv')
 
 if beach != ' ':
  #st.write("The coordinates for this location are " + str(coordinate[0])+ " and "+ str(coordinate[1])+".")
@@ -463,12 +463,11 @@ if beach != ' ':
  
  for n in range(0,8):
    tarih = pd.datetime.today() + dt.timedelta(days = n)
-   d = str(tarih.strftime('%m/%d/%Y'))
+   d = str(tarih.strftime('%Y-%m-%d'))
    s = df[(df.County == county) & (df.Date == d)].T.squeeze()
-   s[1] = numbers[beaches.index(beach)]
+   s[1] = beach_no
    if model.predict(s[1:].values.reshape(1, -1)) == [0]:
       st.markdown(d + ": <strong>Clean</strong>", unsafe_allow_html=True)
-      print(s)
    else:
       st.markdown(d + ": <strong>Polluted</strong>", unsafe_allow_html=True)
  #for x in range(7): 
