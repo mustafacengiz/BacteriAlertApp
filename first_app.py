@@ -459,18 +459,19 @@ if beach != ' ':
 
  st.write("Here are our predictions for "+beach+" for next seven days:")
  st.write("------------------------------------------------------------")
- import datetime
+ import datetime as dt
+ 
  for n in range(0,8):
-   tarih = datetime.today() + timedelta(n)
+   tarih = pd.datetime.today() + dt.timedelta(days = n)
    d = str(tarih.strftime('%m/%d/%Y'))
    s = df[(df.County == county) & (df.Date == d)].T.squeeze()
    s[1] = numbers[beaches.index(beach)]
    if model.predict(s[1:].values.reshape(1, -1)) == [0]:
-      st.markdown(s + ": <strong>Clean</strong>", unsafe_allow_html=True)
+      st.markdown(d + ": <strong>Clean</strong>", unsafe_allow_html=True)
    if model.predict(s[1:].values.reshape(1, -1)) == [1]:
-      st.markdown(s + ": <strong>Polluted</strong>", unsafe_allow_html=True)
+      st.markdown(d + ": <strong>Polluted</strong>", unsafe_allow_html=True)
  #for x in range(7):
-  # t = pd.datetime.today() + dt.timedelta(days=x)
+   #t = pd.datetime.today() + dt.timedelta(days=x)
    #s = str(t.strftime('%m/%d/%Y'))
    #st.write(s + ": Clean")
    #st.markdown(s + ": <strong>Clean</strong>", unsafe_allow_html=True)
