@@ -459,7 +459,7 @@ if beach != ' ':
 
  st.write("Here are our predictions for "+beach+" for next seven days:")
  st.write("------------------------------------------------------------")
- import datetime as dt
+ import datetime
  for n in range(0,8):
    tarih = datetime.today() + timedelta(n)
    d = str(tarih.strftime('%m/%d/%Y'))
