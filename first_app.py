@@ -468,7 +468,7 @@ if beach != ' ':
    #st.markdown(s)
    #st.markdown(s[1:].values.reshape(1, -1))
    if model.predict(s[1:].values.reshape(1, -1)) == [0]:
-      st.markdown(dshow + ": <strong>Clean</strong>", unsafe_allow_html=True)
+      st.markdown(dshow + ": **Clean**")
    else:
       st.markdown(dshow + ": <strong>Polluted</strong>", unsafe_allow_html=True)
  #for x in range(7): 
