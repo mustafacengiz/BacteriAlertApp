@@ -470,7 +470,7 @@ if beach != ' ':
       st.markdown(d + ": <strong>Clean</strong>", unsafe_allow_html=True)
    if model.predict(s[1:].values.reshape(1, -1)) == [1]:
       st.markdown(d + ": <strong>Polluted</strong>", unsafe_allow_html=True)
- #for x in range(7):
+ #for x in range(7): 
    #t = pd.datetime.today() + dt.timedelta(days=x)
    #s = str(t.strftime('%m/%d/%Y'))
    #st.write(s + ": Clean")
