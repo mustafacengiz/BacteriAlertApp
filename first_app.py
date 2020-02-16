@@ -464,12 +464,15 @@ if beach != ' ':
  for n in range(0,8):
    tarih = pd.datetime.today() + dt.timedelta(days = n)
    d = str(tarih.strftime('%Y-%m-%d'))
+   dshow = str(tarih.strftime('%m/%d/%Y'))
    s = df[(df.County == county) & (df.Date == d)].T.squeeze()
+   st.markdown(s)
    s[1] = beach_no
+   st.markdown(s)
    if model.predict(s[1:].values.reshape(1, -1)) == [0]:
-      st.markdown(d + ": <strong>Clean</strong>", unsafe_allow_html=True)
+      st.markdown(dshow + ": <strong>Clean</strong>", unsafe_allow_html=True)
    else:
-      st.markdown(d + ": <strong>Polluted</strong>", unsafe_allow_html=True)
+      st.markdown(dshow + ": <strong>Polluted</strong>", unsafe_allow_html=True)
  #for x in range(7): 
    #t = pd.datetime.today() + dt.timedelta(days=x)
    #s = str(t.strftime('%m/%d/%Y'))
