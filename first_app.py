@@ -198,7 +198,7 @@ lists = [' ',
   'HOLLEY STREET BEACH',
   'INLET BEACH ACCESS']]
 
-beaches = ['BEACH DRIVE',
+allbeaches = ['BEACH DRIVE',
  'BECKRICH RD',
  'BID-A-WEE BEACH',
  'CARL GRAY PARK',
@@ -442,11 +442,11 @@ numbers = [44, 45, 46, 47, 48, 49,
 
 county = st.selectbox('Please select a county:', counties)
 
-beaches = lists[counties.index(county)]
+countybeaches = lists[counties.index(county)]
 
-beach = st.selectbox('Now please select a location: ', beaches)
+beach = st.selectbox('Now please select a location: ', countybeaches)
 
-beach_no = numbers[beaches.index(beach)]
+beach_no = numbers[beaches.index(allbeaches)]
 
 model = pickle.load(open('final_model_.pkl', 'rb'))
 
