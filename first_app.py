@@ -440,11 +440,11 @@ numbers = [44, 45, 46, 47, 48, 49,
  131,
  133, 134, 279, 251, 264, 266, 268, 269, 270, 271, 71, 72, 35, 37, 38, 39, 40, 112, 113, 185, 30, 31, 135, 136, 137, 274, 42, 224, 225, 227]
 
-county = st.selectbox('Please select a county:', counties)
+county = st.sidebar.selectbox('Please select a county:', counties)
 
 countybeaches = lists[counties.index(county)]
 
-beach = st.selectbox('Now please select a location: ', countybeaches)
+beach = st.sidebar.selectbox('Now please select a location: ', countybeaches)
 
 model = pickle.load(open('final_model_.pkl', 'rb'))
 
@@ -505,4 +505,54 @@ if beach != ' ':
 #st.write('Our prediction for tomorrow is: ')
  #st.text(model.predict(t[1:].values.reshape(1, -1)))
 
- st.write('NOTE: The pollution level is determined by bacteria level. "Polluted" means that the enterococcus level is expected to be greater than 70 colony per 100 ml at the given location on the given date.')
+ st.write('**NOTE:** Pollution is determined by bacteria level. "Polluted" means that the enterococcus level is expected to be greater than 70 colony per 100 ml at the given location on the given date.')
+
+ st.write('We use *a machine learning model* to provide these predictions. Air temperature and precipitation are important predictors for our model.')
+
+ st.write("Here are the air temperature predictions at "+beach+" over next seven days, provided by Dark Sky API:")
+
+ fig2 = go.Figure()
+
+ #Add scatter trace for line
+ fig2.add_trace(go.Scatter(
+	x=df[df['County'] == county].Date.tolist(),
+	y=df[df['County'] == county].AirTemp.tolist(),
+   	 mode="lines",
+    	name="temperature"
+	))
+
+ fig2.update_layout(
+    xaxis_title="Date",
+    yaxis_title="Temperature (in F)",
+    font=dict(
+        family="Courier New, monospace",
+        size=18,
+        color="#7f7f7f"
+    )
+ )
+
+ st.write(fig2)
+
+ st.write("Here are the precipitation predictions:")
+
+ fig3 = go.Figure()
+
+ #Add scatter trace for line
+ fig3.add_trace(go.Scatter(
+	x=df[df['County'] == county].Date.tolist(),
+	y=df[df['County'] == county].RainFall24h.tolist(),
+   	 mode="lines",
+    	name="temperature"
+	))
+
+ fig3.update_layout(
+    xaxis_title="Date",
+    yaxis_title="Precipitation (in mm)",
+    font=dict(
+        family="Courier New, monospace",
+        size=18,
+        color="#7f7f7f"
+    )
+ )
+
+ st.write(fig3)
