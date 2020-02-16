@@ -448,9 +448,9 @@ beach = st.selectbox('Now please select a location: ', beaches)
 
 beach_no = numbers[beaches.index(beach)]
 
-model = pickle.load(open('prediction_model', 'rb'))
+model = pickle.load(open('final_model_.pkl', 'rb'))
 
-df = pd.read_csv('Locations')
+df = pd.read_csv('feed.csv')
 
 if beach != ' ':
  #st.write("The coordinates for this location are " + str(coordinate[0])+ " and "+ str(coordinate[1])+".")
@@ -459,13 +459,21 @@ if beach != ' ':
 
  st.write("Here are our predictions for "+beach+" for next seven days:")
  st.write("------------------------------------------------------------")
-
-#import datetime as dt
- for x in range(7):
-   t = pd.datetime.today() + dt.timedelta(days=x)
-   s = str(t.strftime('%m/%d/%Y'))
+ import datetime as dt
+ for n in range(0,8):
+   tarih = datetime.today() + timedelta(n)
+   d = str(tarih.strftime('%m/%d/%Y'))
+   s = df[(df.County == county) & (df.Date == d)].T.squeeze()
+   s[1] = numbers[beaches.index(beach)]
+   if model.predict(s[1:].values.reshape(1, -1)) == [0]:
+      st.markdown(s + ": <strong>Clean</strong>", unsafe_allow_html=True)
+   if model.predict(s[1:].values.reshape(1, -1)) == [1]:
+      st.markdown(s + ": <strong>Polluted</strong>", unsafe_allow_html=True)
+ #for x in range(7):
+  # t = pd.datetime.today() + dt.timedelta(days=x)
+   #s = str(t.strftime('%m/%d/%Y'))
    #st.write(s + ": Clean")
-   st.markdown(s + ": <strong>Clean</strong>", unsafe_allow_html=True)
+   #st.markdown(s + ": <strong>Clean</strong>", unsafe_allow_html=True)
  #t = pd.dt.today() + DT.timedelta(days=x)
  #s = str(t.strftime('%m/%d/%Y'))
  #st.write(s +": Clean")
