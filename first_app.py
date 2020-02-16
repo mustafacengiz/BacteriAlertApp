@@ -446,17 +446,14 @@ countybeaches = lists[counties.index(county)]
 
 beach = st.selectbox('Now please select a location: ', countybeaches)
 
-beach_no = numbers[allbeaches.index(beach)]
-
 model = pickle.load(open('final_model_.pkl', 'rb'))
 
 df = pd.read_csv('feed.csv')
 
 if beach != ' ':
+   
  #st.write("The coordinates for this location are " + str(coordinate[0])+ " and "+ str(coordinate[1])+".")
-
-#abc
-
+ beach_no = numbers[allbeaches.index(beach)]
  st.write("Here are our predictions for "+beach+" for next seven days:")
  st.write("------------------------------------------------------------")
  import datetime as dt
