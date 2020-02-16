@@ -463,10 +463,10 @@ if beach != ' ':
    d = str(tarih.strftime('%Y-%m-%d'))
    dshow = str(tarih.strftime('%m/%d/%Y'))
    s = df[(df.County == county) & (df.Date == d)].T.squeeze()
-   st.markdown(s)
+   #st.markdown(s)
    s[1] = beach_no
-   st.markdown(s)
-   st.markdown(s[1:].values.reshape(1, -1))
+   #st.markdown(s)
+   #st.markdown(s[1:].values.reshape(1, -1))
    if model.predict(s[1:].values.reshape(1, -1)) == [0]:
       st.markdown(dshow + ": <strong>Clean</strong>", unsafe_allow_html=True)
    else:
