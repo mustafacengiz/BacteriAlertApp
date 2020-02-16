@@ -469,6 +469,7 @@ if beach != ' ':
    #st.markdown(s[1:].values.reshape(1, -1))
    if model.predict(s[1:].values.reshape(1, -1)) == [0]:
       st.markdown(dshow + ": **Clean**")
+      st.markdown(dshow + ": <p style="color:blue;">Red paragraph text</p>", unsafe_allow_html=True)
    else:
       st.markdown(dshow + ": <strong>Polluted</strong>", unsafe_allow_html=True)
  #for x in range(7): 
